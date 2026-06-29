@@ -23,8 +23,8 @@ Sitio web institucional de la Capellanía San Francisco de Asís, perteneciente 
 ## Instalación y desarrollo
 
 ```bash
-git clone https://github.com/TU_USUARIO/TU_REPO.git
-cd TU_REPO
+git clone https://github.com/JulRiv07/Iglesia_SanFrancisco
+cd Iglesia_SanFrancisco
 npm install
 npm run dev
 ```
@@ -70,56 +70,6 @@ src/
 
 ---
 
-## Personalizar contenido
-
-Todo lo editable está en `src/i18n/es.js` y `src/i18n/en.js`. No hay que tocar los componentes para cambiar textos.
-
-### Pendientes de llenar
-
-Busca `<!-- LLENAR:` en los archivos para encontrar los campos que faltan:
-
-| Campo | Dónde | Qué poner |
-|-------|-------|-----------|
-| Dirección | `es.js` → `map.addressDisplay` | Dirección física de la capilla |
-| Teléfono | `es.js` → `map.phoneDisplay` | Número de contacto |
-| Horarios de misa | `es.js` → `map.schedule` | Horas por día |
-| Mapa | `MapSection.jsx` | Reemplazar bloque `mapPlaceholder` con el iframe de Google Maps |
-| Requisitos sacramentos | `es.js` → `sacraments.requirements` | Texto del acordeón por sacramento |
-
-### Agregar un evento
-
-En `src/i18n/es.js`, dentro de `events.upcoming`:
-
-```js
-{
-  id: 4,
-  title: 'Nombre del evento',
-  date: '2026-08-15',       // YYYY-MM-DD
-  time: '9:00 AM',
-  description: 'Descripción breve.',
-  category: 'Liturgia',     // Liturgia | Catequesis | Formacion | Pastoral
-},
-```
-
-Después guardar y ejecutar `npm run build`.
-
-### Cambiar imágenes
-
-Las fotos van en `public/images/`. Los nombres que usa el sitio:
-
-| Archivo | Dónde aparece |
-|---------|---------------|
-| `hero.jpg` | Fondo del encabezado |
-| `exterior.jpg` | Galería |
-| `mass-priest.jpg` | Galería |
-| `mass-community.jpg` | Galería + sección Nosotros |
-| `community-1.jpg` | Galería |
-| `community-2.jpg` | Galería |
-
-Reemplazar el archivo con el mismo nombre. Sin tocar código.
-
----
-
 ## Qué incluye el sitio
 
 - Bilingüe ES / EN con toggle en la barra de navegación
@@ -147,17 +97,6 @@ Derivada de las fotos reales de la capilla:
 | `--iron-mid` | `#3D3530` | Footer |
 
 El modo oscuro usa `#1C1008` como base — marrón muy oscuro, no negro, para evocar el interior de la capilla con velas.
-
----
-
-## Despliegue
-
-**Netlify (más fácil):**
-1. Conectar el repo en [netlify.com](https://netlify.com)
-2. Build command: `npm run build`
-3. Publish directory: `dist`
-
-**GitHub Pages:** usar GitHub Actions con el workflow oficial de Vite.
 
 ---
 
