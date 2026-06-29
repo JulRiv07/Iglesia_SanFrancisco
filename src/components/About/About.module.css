@@ -218,8 +218,11 @@
   transition: transform var(--transition-slow), filter var(--transition-slow);
 }
 
-.galleryItem:nth-child(2) img,
-.galleryItem:nth-child(3) img { object-position: center 20%; }
+.galleryItem:nth-child(1) img { object-position: center 30%; }
+.galleryItem:nth-child(2) img { object-position: center 25%; }
+.galleryItem:nth-child(3) img { object-position: center 40%; }
+.galleryItem:nth-child(5) img { object-position: center 40%; }
+.galleryItem:nth-child(6) img { object-position: center 40%; }
 
 .galleryItem:hover img {
   transform: scale(1.06);

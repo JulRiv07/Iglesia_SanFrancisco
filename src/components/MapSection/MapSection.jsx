@@ -132,7 +132,7 @@ export default function MapSection() {
           {/* Map embed area */}
           <div className={`${styles.mapContainer} reveal reveal-delay-2`}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1982.6902876154838!2d-75.53748652869771!3d6.34473601279518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442f8e5fd9b6eb%3A0xc9564d342f73f704!2sBatall%C3%B3n%20Gral.%20Pedro%20Nel%20Ospina%2C%20Bello%2C%20Antioquia%2C%20Colombia!5e0!3m2!1ses-419!2sca!4v1782705416318!5m2!1ses-419!2sca"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d900.9873268900147!2d-75.53740446255252!3d6.345215068563812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2sca!4v1782712293994!5m2!1ses!2sca"
               width="100%"
               height="100%"
               style={{ border: 0 }}
