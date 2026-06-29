@@ -1,0 +1,308 @@
+.sacraments {
+  background: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* Form card */
+.formCard {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  position: relative;
+}
+
+.formTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.formSubtitle {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);   /* 24px between all form groups */
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+@media (max-width: 480px) {
+  .twoCol { grid-template-columns: 1fr; }
+}
+
+/* -- Conditional block: wraps service indicator + fields -- */
+.conditionalBlock {
+  border: 1.5px solid var(--brick);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  animation: slideDown 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Service name header bar */
+.serviceIndicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  background: var(--brick);
+  color: #fff;
+}
+
+.serviceIndicatorCross {
+  font-size: var(--text-base);
+  opacity: 0.9;
+}
+
+.serviceIndicatorLabel {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Inner fields area */
+.conditionalFields {
+  padding: var(--space-5);
+  background: var(--bg-elevated);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+[data-theme="dark"] .conditionalFields {
+  background: var(--bg-subtle);
+}
+
+/* Radio */
+.radio {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.radioInput {
+  accent-color: var(--brick);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Submit */
+.submitBtn {
+  margin-top: var(--space-2);
+  width: 100%;
+  justify-content: center;
+  padding: var(--space-4);
+  font-size: var(--text-base);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modalBox {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--space-8);
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+  animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.modalIcon {
+  font-size: 3rem;
+  color: var(--brick);
+  margin-bottom: var(--space-4);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 8px rgba(193,68,14,0.4); }
+  to   { text-shadow: 0 0 20px rgba(193,68,14,0.8); }
+}
+
+.modalTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.modalMsg {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+  line-height: 1.7;
+}
+
+/* Accordion */
+.accordion {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.accordionHeader {
+  padding: var(--space-8);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.accordionTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.accordionSubtitle {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.accordionItem {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.accordionItem:last-child { border-bottom: none; }
+
+.accordionBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.accordionBtn:hover { background: var(--bg-elevated); }
+
+.accordionOpen .accordionBtn {
+  background: var(--brick-pale);
+}
+
+[data-theme="dark"] .accordionOpen .accordionBtn {
+  background: var(--bg-elevated);
+}
+
+.accordionCross {
+  font-size: var(--text-base);
+  color: var(--brick);
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.accordionItemTitle {
+  flex: 1;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.accordionChevron {
+  font-size: var(--text-xl);
+  color: var(--text-muted);
+  transition: transform var(--transition-base);
+  display: inline-block;
+}
+
+.chevronOpen {
+  transform: rotate(90deg);
+}
+
+.accordionBody {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow);
+}
+
+.accordionBodyOpen {
+  max-height: 400px;
+}
+
+.accordionContent {
+  padding: var(--space-4) var(--space-6) var(--space-6);
+}
+
+.accordionContent p {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-3);
+  line-height: 1.7;
+}
+
+.placeholder {
+  opacity: 0.5;
+}
+
+.placeholder code {
+  font-family: monospace;
+  font-size: var(--text-xs);
+  background: var(--bg-elevated);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  display: block;
+  color: var(--brick);
+}

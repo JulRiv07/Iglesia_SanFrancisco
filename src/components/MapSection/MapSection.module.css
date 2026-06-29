@@ -1,0 +1,233 @@
+.mapSection {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Brick-inspired background */
+.brickBg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--brick-dark);
+  background-image:
+    linear-gradient(135deg, rgba(0,0,0,0.3) 0%, transparent 50%, rgba(0,0,0,0.2) 100%);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: var(--space-8);
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* Info Panel */
+.infoPanel {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-xl);
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.logoCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--brick);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logoCross {
+  color: #fff;
+  font-size: var(--text-2xl);
+}
+
+.logoName {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brick);
+  margin-bottom: 2px;
+}
+
+.logoTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.logoDiocesis {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Info list */
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+.infoItem {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.infoIcon {
+  color: var(--brick);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.infoLabel {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.infoValue {
+  display: block;
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+}
+
+.infoLink {
+  font-size: var(--text-base);
+  color: var(--brick);
+}
+.infoLink:hover { color: var(--brick-dark); }
+
+/* Schedule */
+.schedule {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.scheduleHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--brick);
+  margin-bottom: var(--space-4);
+}
+
+.scheduleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: var(--text-sm);
+}
+
+.scheduleRow:last-child { border-bottom: none; }
+
+.scheduleDay {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.scheduleTime {
+  color: var(--text-muted);
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+/* Map container */
+.mapContainer {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 420px;
+  box-shadow: var(--shadow-xl);
+}
+
+.mapContainer iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  display: block;
+}
+
+/* Map placeholder */
+.mapPlaceholder {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-10);
+  gap: var(--space-3);
+  border: 2px dashed var(--border);
+}
+
+.mapPlaceholderIcon {
+  font-size: 3rem;
+  margin-bottom: var(--space-2);
+}
+
+.mapPlaceholderTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--text-secondary);
+}
+
+.mapPlaceholderNote {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.mapCode {
+  font-size: var(--text-xs);
+  background: var(--bg-elevated);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  color: var(--brick);
+  font-family: monospace;
+}
+
+/* Escuela de la Fe block */
+.schoolOfFaith {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.schoolCross {
+  color: var(--gold);
+  font-size: var(--text-base);
+}
