@@ -25,6 +25,34 @@ function formatMonth(dateStr, months) {
   return months[new Date(dateStr + 'T12:00:00').getMonth()]
 }
 
+// Genera todas las ocurrencias de eventos recurrentes para el año dado
+function generateRecurring(rules, year) {
+  const result = []
+  rules.forEach((rule, rIdx) => {
+    const start = new Date(rule.startDate + 'T12:00:00')
+    const end   = new Date(rule.endDate   + 'T12:00:00')
+    const cur   = new Date(Math.max(start.getTime(), new Date(year, 0, 1).getTime()))
+    const cap   = new Date(Math.min(end.getTime(),   new Date(year, 11, 31).getTime()))
+    while (cur.getDay() !== rule.dayOfWeek) cur.setDate(cur.getDate() + 1)
+    let seq = 0
+    while (cur <= cap) {
+      const dateStr = cur.toISOString().split('T')[0]
+      result.push({
+        id: `rec-${rIdx}-${seq}`,
+        title: rule.title,
+        date: dateStr,
+        time: rule.time,
+        description: rule.description,
+        category: rule.category,
+        recurring: true,
+      })
+      seq++
+      cur.setDate(cur.getDate() + 7)
+    }
+  })
+  return result
+}
+
 function EventCard({ event, months }) {
   const color = getCategoryColor(event.category)
   const past = isPast(event.date)
@@ -49,8 +77,8 @@ function EventCard({ event, months }) {
 
 function Calendar({ allEvents, months, days }) {
   const today = new Date()
-  const [year, setYear]       = useState(today.getFullYear())
-  const [month, setMonth]     = useState(today.getMonth())
+  const [year,  setYear]    = useState(today.getFullYear())
+  const [month, setMonth]   = useState(today.getMonth())
   const [selected, setSelected] = useState(null)
 
   function prevMonth() {
@@ -101,23 +129,21 @@ function Calendar({ allEvents, months, days }) {
           {days.map(d => (
             <div key={d} className={styles.calDayLabel}>{d}</div>
           ))}
-
           {cells.map((day, idx) => {
             if (!day) return <div key={`e-${idx}`} className={`${styles.calCell} ${styles.calEmpty}`} />
             const evs      = eventsByDay[day] || []
             const hasEvent = evs.length > 0
             const past     = isCellPast(day) && !isToday(day)
             const selCell  = selected === day
-
             return (
               <div
                 key={day}
                 className={[
                   styles.calCell,
-                  past        ? styles.calPast     : '',
-                  isToday(day)? styles.calToday    : '',
-                  hasEvent    ? styles.calHasEvent  : '',
-                  selCell     ? styles.calSelected  : '',
+                  past         ? styles.calPast    : '',
+                  isToday(day) ? styles.calToday   : '',
+                  hasEvent     ? styles.calHasEvent : '',
+                  selCell      ? styles.calSelected : '',
                 ].join(' ')}
                 onClick={() => setSelected(selCell ? null : day)}
                 role="button"
@@ -146,9 +172,9 @@ function Calendar({ allEvents, months, days }) {
             <div className={styles.calPanelTitle}>
               {selected ? `${selected} de ${months[month]}` : months[month]}
             </div>
-            {panelEvents.map(ev => (
+            {panelEvents.slice(0, 6).map((ev, i) => (
               <div
-                key={ev.id}
+                key={`${ev.id}-${i}`}
                 className={styles.calPanelItem}
                 style={{ '--item-color': getCategoryColor(ev.category) }}
               >
@@ -178,7 +204,10 @@ function Calendar({ allEvents, months, days }) {
 export default function Events() {
   const { t } = useLang()
   const [tab, setTab] = useState('upcoming')
-  const allEvents = [...t.events.upcoming, ...t.events.past]
+  const year = new Date().getFullYear()
+  const recurring     = generateRecurring(t.events.recurring || [], year)
+  const calendarFeasts = t.events.calendarFeasts || []
+  const allEvents = [...t.events.upcoming, ...t.events.past, ...calendarFeasts, ...recurring]
 
   return (
     <section id="eventos" className={`section ${styles.events}`}>

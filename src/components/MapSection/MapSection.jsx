@@ -1,6 +1,13 @@
 import { useLang } from '../../contexts/LangContext'
 import styles from './MapSection.module.css'
 
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// ESCUELA DE LA FE — ESTADO DE VACACIONES
+// true  → muestra aviso de vacaciones (naranja)
+// false → muestra horario activo (verde)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const ESCUELA_VACACIONES = true
+
 const PinIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
@@ -106,40 +113,34 @@ export default function MapSection() {
               <div className={styles.scheduleHeader}>
                 <span className={styles.schoolCross}>&#x271E;</span>
                 <span>{t.map.schoolOfFaithTitle}</span>
+                <span className={ESCUELA_VACACIONES ? styles.badgeVacation : styles.badgeActive}>
+                  {ESCUELA_VACACIONES ? 'En vacaciones' : 'Activa'}
+                </span>
               </div>
-              <div className={styles.scheduleRow}>
-                <span className={styles.scheduleDay}>{t.map.schoolOfFaithSchedule}</span>
+              {ESCUELA_VACACIONES ? (
+                <p className={styles.vacationNote}>
+                  Actualmente en periodo de vacaciones. ¡Nos vemos pronto!
+                </p>
+              ) : (
+                <div className={styles.scheduleRow}>
+                  <span className={styles.scheduleDay}>{t.map.schoolOfFaithSchedule}</span>
               </div>
+              )}
             </div>
           </div>
 
           {/* Map embed area */}
           <div className={`${styles.mapContainer} reveal reveal-delay-2`}>
-            {/* PEGAR IFRAME DE GOOGLE MAPS AQUÍ */}
-            <div className={styles.mapPlaceholder}>
-              <div className={styles.mapPlaceholderIcon}>📍</div>
-              <p className={styles.mapPlaceholderTitle}>{t.map.mapPlaceholder}</p>
-              <p className={styles.mapPlaceholderNote}>
-                {/* Instrucción para el cliente */}
-                Reemplazar este bloque con el iframe de Google Maps
-              </p>
-              <code className={styles.mapCode}>
-                {'<!-- PEGAR IFRAME DE GOOGLE MAPS AQUÍ -->'}
-              </code>
-            </div>
-            {/*
-              INSTRUCCIÓN: Reemplazar el div.mapPlaceholder completo con:
-              <iframe
-                src="TU_URL_DE_GOOGLE_MAPS"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación Capellanía San Francisco de Asís"
-              />
-            */}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1982.6902876154838!2d-75.53748652869771!3d6.34473601279518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442f8e5fd9b6eb%3A0xc9564d342f73f704!2sBatall%C3%B3n%20Gral.%20Pedro%20Nel%20Ospina%2C%20Bello%2C%20Antioquia%2C%20Colombia!5e0!3m2!1ses-419!2sca!4v1782705416318!5m2!1ses-419!2sca"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Capellanía San Francisco de Asís — Batallón Gral. Pedro Nel Ospina, Bello, Antioquia"
+            />
           </div>
         </div>
       </div>

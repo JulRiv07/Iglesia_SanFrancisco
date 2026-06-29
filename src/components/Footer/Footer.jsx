@@ -86,11 +86,11 @@ export default function Footer() {
             <span className={styles.colTitle} style={{ fontSize: 'var(--text-sm)' }}>{f.followUs}</span>
             <div className={styles.socialLinks}>
               {/* <!-- LLENAR: URL de Instagram --> */}
-              <a href="#" className={styles.socialBtn} aria-label="Instagram" title="Instagram">
+              <a href="https://www.instagram.com/capellaniabiosp?igsh=MXQxanR6Z2VnYjJoeA%3D%3D&utm_source=qr" className={styles.socialBtn} aria-label="Instagram" title="Instagram">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </a>
               {/* <!-- LLENAR: URL de YouTube --> */}
-              <a href="#" className={styles.socialBtn} aria-label="YouTube" title="YouTube">
+              <a href="https://www.youtube.com/@obispadocastrensedecolombi1049" className={styles.socialBtn} aria-label="YouTube" title="YouTube">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff"/></svg>
               </a>
             </div>
