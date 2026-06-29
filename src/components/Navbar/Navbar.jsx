@@ -139,6 +139,15 @@ export default function Navbar() {
           ))}
           <div className={styles.mobileDivider} />
           <button
+            className={`${styles.mobileNavLink} ${styles.mobileMembersBtn}`}
+            disabled
+            title={lang === 'es' ? 'Próximamente' : 'Coming soon'}
+          >
+            👤 {lang === 'es' ? 'Área de Miembros' : 'Members Area'}
+            <span className={styles.mobileBadge}>{lang === 'es' ? 'Próximamente' : 'Coming soon'}</span>
+          </button>
+          <div className={styles.mobileDivider} />
+          <button
             className={`${styles.mobileNavLink} ${styles.mobileNavBtn}`}
             onClick={() => { toggleLang(); handleLinkClick() }}
           >

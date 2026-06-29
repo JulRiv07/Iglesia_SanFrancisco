@@ -264,16 +264,31 @@
 
 .mobileNavBtn { font-family: var(--font-body); }
 
-.mobileDivider {
-  height: 1px;
-  background: var(--border-light);
-  margin: var(--space-2) var(--space-6);
+.mobileMembersBtn {
+  font-family: var(--font-body);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  opacity: 0.6;
+  cursor: default;
+}
+
+.mobileBadge {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
 }
 
 /* === OVERLAY === */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: -1;
+  background: rgba(0,0,0,0.5);
+  z-index: 98;
 }
