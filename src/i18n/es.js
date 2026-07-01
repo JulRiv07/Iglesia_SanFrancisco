@@ -48,12 +48,12 @@ const es = {
     ],
     galleryLabel: 'Nuestra capilla',
     gallery: [
-      { src: '/images/hero.jpg', alt: 'Altar mayor de la capilla' },
-      { src: '/images/exterior.jpg', alt: 'San Francisco de Asís — entrada principal' },
-      { src: '/images/mass-priest.jpg', alt: 'Celebración de la Eucaristía' },
-      { src: '/images/mass-community.jpg', alt: 'Comunidad reunida en misa' },
+      { src: '/images/ceremony-incense.jpg', alt: 'Altar de la Capellanía San Francisco de Asís' },
+      { src: '/images/ceremony-cross.jpg', alt: 'San Francisco de Asís — entrada de la capellanía' },
+      { src: '/images/ceremony-3.jpg', alt: 'Homilía en la Capellanía' },
+      { src: '/images/ceremony-4.jpg', alt: 'Comunidad reunida en la Santa Misa' },
       { src: '/images/community-1.jpg', alt: 'Celebración comunitaria' },
-      { src: '/images/community-2.jpg', alt: 'Asamblea de la comunidad' },
+      { src: '/images/hero.jpg', alt: 'Altar mayor' },
     ],
   },
 
@@ -61,8 +61,7 @@ const es = {
   map: {
     label: 'Visítanos',
     title: 'Encuéntranos',
-    addressDisplay: 'Batallón General Pedro Nel Ospina',
-    phoneDisplay: 'Tel: Por confirmar',
+    addressDisplay: 'Diagonal 57 #36-200, Batallón Gral. Pedro Nel Ospina, Bello, Antioquia',
     email: 'capellaniasanfrancisco@gmail.com',
     schedule: [
       { day: 'Miercoles', time: '8:00 am - 9:00 am' },
@@ -206,8 +205,8 @@ const es = {
       {
         id: 'matrimonio',
         title: 'Matrimonio',
-        content: '<Por confirmar>',
-        contentDisplay: 'Los requisitos para el Matrimonio serán publicados próximamente. Contáctanos para más información.',
+        content: 'Contacto personal',
+        contentDisplay: 'El Sacramento del Matrimonio requiere acompañamiento personalizado. Por favor escríbenos al correo para coordinar una cita con el capellán.',
       },
     ],
   },
@@ -237,7 +236,6 @@ const es = {
     contact: 'Contacto',
     followUs: 'Síguenos',
     addressDisplay: 'Batallón Gral. Pedro Nel Ospina',
-    phoneDisplay: 'Tel: Por confirmar',
     email: 'capellaniasanfrancisco@gmail.com',
     copyright: '© 2026 Capellanía San Francisco de Asís — Obispado Castrense de Colombia',
     religiousQuotes: [

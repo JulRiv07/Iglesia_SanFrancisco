@@ -52,7 +52,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 60%, rgba(26,13,5,0.7) 100%);
+  background: linear-gradient(180deg, transparent 60%, rgba(11,26,43,0.75) 100%);
   z-index: 1;
 }
 
@@ -232,7 +232,7 @@
 .galleryOverlay {
   position: absolute;
   inset: 0;
-  background: rgba(193,68,14,0);
+  background: rgba(44,74,53,0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -242,7 +242,7 @@
 }
 
 .galleryItem:hover .galleryOverlay {
-  background: rgba(193,68,14,0.4);
+  background: rgba(44,74,53,0.45);
   opacity: 1;
 }
 
