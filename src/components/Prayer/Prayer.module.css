@@ -1,0 +1,168 @@
+.prayer {
+  position: relative;
+  background: var(--bg-elevated);
+  overflow: hidden;
+  padding: var(--space-20) 0 var(--space-16);
+}
+
+/* Fondo con imagen sutil de la capilla */
+.bgLayer {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(11, 26, 43, 0.97) 0%,
+      rgba(26, 58, 37, 0.95) 50%,
+      rgba(11, 26, 43, 0.97) 100%
+    );
+}
+
+[data-theme="light"] .bgLayer {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(44, 74, 53, 0.97) 0%,
+      rgba(26, 44, 35, 0.96) 50%,
+      rgba(44, 74, 53, 0.97) 100%
+    );
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Header */
+.header {
+  margin-bottom: var(--space-12);
+}
+
+.saintLabel {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-5);
+}
+
+.crossDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.line {
+  flex: 1;
+  max-width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent);
+}
+
+.cross {
+  font-size: var(--text-xl);
+  color: var(--gold);
+  opacity: 0.9;
+}
+
+/* Card */
+.prayerCard {
+  position: relative;
+  padding: var(--space-8) var(--space-10);
+}
+
+@media (max-width: 640px) {
+  .prayerCard { padding: var(--space-6) var(--space-4); }
+}
+
+.openQuote,
+.closeQuote {
+  font-family: var(--font-display);
+  font-size: 120px;
+  color: var(--gold);
+  opacity: 0.15;
+  line-height: 0.6;
+  user-select: none;
+}
+
+.openQuote {
+  text-align: left;
+  margin-bottom: var(--space-2);
+}
+
+.closeQuote {
+  text-align: right;
+  margin-top: var(--space-2);
+  line-height: 0.3;
+}
+
+.verses {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.verse {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-xl), 2.5vw, var(--text-3xl));
+  font-weight: 300;
+  font-style: italic;
+  color: #E8EDF2;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.verse:first-child {
+  font-size: clamp(var(--text-2xl), 3vw, var(--text-4xl));
+  color: #fff;
+  font-weight: 400;
+}
+
+/* Attribution */
+.attribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  margin-top: var(--space-10);
+}
+
+.attrLine {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: rgba(201,168,76,0.35);
+}
+
+.attrText {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Footer cross */
+.footer {
+  margin-top: var(--space-10);
+}
+
+.footerCross {
+  font-size: var(--text-3xl);
+  color: var(--gold);
+  opacity: 0.4;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.7; }
+}

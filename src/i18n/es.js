@@ -29,6 +29,19 @@ const es = {
     ctaSecondary: 'Servicios y Sacramentos',
   },
 
+
+  // PRAYER
+  prayer: {
+    label: 'Oración de San Francisco de Asís',
+    verses: [
+      'Señor, hazme un instrumento de tu paz.',
+      'Donde haya odio, que yo lleve amor; donde haya ofensa, perdón; donde haya discordia, unión; donde haya duda, fe; donde haya error, verdad; donde haya desesperación, esperanza; donde haya tristeza, alegría; donde haya tinieblas, luz.',
+      'Oh Maestro, que yo no busque tanto ser consolado como consolar; ser comprendido como comprender; ser amado como amar.',
+      'Porque dando es como se recibe, perdonando es como se es perdonado, y muriendo es como se resucita a la vida eterna.',
+    ],
+    attribution: 'San Francisco de Asís',
+  },
+
   // ABOUT
   about: {
     label: 'Sobre nosotros',
