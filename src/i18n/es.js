@@ -61,12 +61,13 @@ const es = {
     ],
     galleryLabel: 'Nuestra capilla',
     gallery: [
-      { src: '/images/ceremony-incense.jpg', alt: 'Altar de la Capellanía San Francisco de Asís' },
-      { src: '/images/ceremony-cross.jpg', alt: 'San Francisco de Asís — entrada de la capellanía' },
-      { src: '/images/ceremony-3.jpg', alt: 'Homilía en la Capellanía' },
-      { src: '/images/ceremony-4.jpg', alt: 'Comunidad reunida en la Santa Misa' },
+      { src: '/images/Altar.png', alt: 'Altar de la Capellanía San Francisco de Asís' },
+      { src: '/images/incense-soldiers.jpg', alt: 'San Francisco de Asís — entrada de la capellanía' },
+      { src: '/images/semana-santa.png', alt: 'Semana santa en la Capellanía' },
+      { src: '/images/San-francisco.png', alt: 'San Francisco de Asís' },
+      { src: '/images/entrada.png', alt: 'Entrada de la Capellanía' },
       { src: '/images/community-1.jpg', alt: 'Celebración comunitaria' },
-      { src: '/images/hero.jpg', alt: 'Altar mayor' },
+      { src: '/images/mass-ceremony.jpg', alt: 'Celebración Semana Santa' },
     ],
   },
 

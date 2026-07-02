@@ -79,7 +79,7 @@ function Calendar({ allEvents, months, days }) {
   const today = new Date()
   const [year,  setYear]    = useState(today.getFullYear())
   const [month, setMonth]   = useState(today.getMonth())
-  const [selected, setSelected] = useState(null)
+  const [selected, setSelected] = useState(today.getDate())
 
   function prevMonth() {
     if (month === 0) { setMonth(11); setYear(y => y - 1) }
@@ -203,11 +203,18 @@ function Calendar({ allEvents, months, days }) {
 
 export default function Events() {
   const { t } = useLang()
-  const [tab, setTab] = useState('upcoming')
-  const year = new Date().getFullYear()
-  const recurring     = generateRecurring(t.events.recurring || [], year)
+  const [tab, setTab] = useState('calendar')
+  const today = new Date()
+  const year  = today.getFullYear()
+  const recurring      = generateRecurring(t.events.recurring || [], year)
   const calendarFeasts = t.events.calendarFeasts || []
   const allEvents = [...t.events.upcoming, ...t.events.past, ...calendarFeasts, ...recurring]
+
+  // Solo eventos del mes actual
+  const thisMonthUpcoming = t.events.upcoming.filter(ev => {
+    const d = new Date(ev.date + 'T12:00:00')
+    return d.getFullYear() === today.getFullYear() && d.getMonth() === today.getMonth()
+  })
 
   return (
     <section id="eventos" className={`section ${styles.events}`}>
@@ -221,9 +228,9 @@ export default function Events() {
 
         <div className={styles.tabs}>
           {[
+            { key: 'calendar', label: t.events.tabCalendar },
             { key: 'upcoming', label: t.events.tabUpcoming },
             { key: 'past',     label: t.events.tabPast },
-            { key: 'calendar', label: t.events.tabCalendar },
           ].map(({ key, label }) => (
             <button
               key={key}
@@ -237,9 +244,9 @@ export default function Events() {
 
         {tab === 'upcoming' && (
           <div className={styles.eventsList}>
-            {t.events.upcoming.length === 0
+            {thisMonthUpcoming.length === 0
               ? <p className={styles.empty}>{t.events.noUpcoming}</p>
-              : t.events.upcoming.map((ev, i) => (
+              : thisMonthUpcoming.map((ev, i) => (
                   <div key={ev.id} className={styles.cardWrapper} style={{ animationDelay: `${i * 70}ms` }}>
                     <EventCard event={ev} months={t.events.months} />
                   </div>

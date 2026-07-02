@@ -25,6 +25,19 @@ const en = {
     ctaPrimary: 'Meet our community',
     ctaSecondary: 'Services & Sacraments',
   },
+
+  // PRAYER
+  prayer: {
+    label: 'Prayer of Saint Francis of Assisi',
+    verses: [
+      'Lord, make me an instrument of your peace.',
+      'Where there is hatred, let me sow love; where there is injury, pardon; where there is discord, union; where there is doubt, faith; where there is error, truth; where there is despair, hope; where there is sadness, joy; where there is darkness, light.',
+      'O Master, grant that I may never seek so much to be consoled as to console; to be understood as to understand; to be loved as to love.',
+      'For it is in giving that we receive, it is in pardoning that we are pardoned, and it is in dying that we are born to eternal life.',
+    ],
+    attribution: 'Saint Francis of Assisi',
+  },
+
   about: {
     label: 'Our Story',
     title: 'A community forged in faith',
@@ -43,12 +56,13 @@ const en = {
     ],
     galleryLabel: 'Our chapel',
     gallery: [
-      { src: '/images/ceremony-incense.jpg', alt: 'Altar of the San Francisco de Asis Chaplaincy' },
-      { src: '/images/ceremony-cross.jpg', alt: 'Saint Francis of Assisi — chaplaincy entrance' },
-      { src: '/images/ceremony-3.jpg', alt: 'Homily at the Chaplaincy' },
-      { src: '/images/ceremony-4.jpg', alt: 'Community gathered at Holy Mass' },
+      { src: '/images/Altar.png', alt: 'Altar of the San Francisco de Asis Chaplaincy' },
+      { src: '/images/incense-soldiers.jpg', alt: 'Saint Francis of Assisi — chaplaincy entrance' },
+      { src: '/images/semana-santa.png', alt: 'Holy Week at the Chaplaincy' },
+      { src: '/images/San-francisco.png', alt: 'Saint Francis of Assisi' },
+      { src: '/images/entrada.png', alt: 'Chaplaincy Entrance' },
       { src: '/images/community-1.jpg', alt: 'Community celebration' },
-      { src: '/images/hero.jpg', alt: 'Main altar' },
+      { src: '/images/mass-ceremony.jpg', alt: 'Holy Week celebration' },
     ],
   },
   map: {

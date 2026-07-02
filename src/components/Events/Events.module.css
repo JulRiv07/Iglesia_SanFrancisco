@@ -157,7 +157,7 @@
 
 /* -- CALENDAR ------------------------------------------- */
 .calendarWrapper {
-  max-width: 640px;
+  max-width: 480px;
   margin: 0 auto;
   animation: cardIn 0.35s ease both;
 }
@@ -175,7 +175,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-5) var(--space-6);
+  padding: var(--space-3) var(--space-5);
   background: linear-gradient(135deg, var(--brick-dark), var(--brick));
   color: #fff;
 }
@@ -201,7 +201,7 @@
 
 .calTitle {
   font-family: var(--font-display);
-  font-size: var(--text-2xl);
+  font-size: var(--text-lg);
   font-weight: 400;
   letter-spacing: 0.02em;
 }
@@ -210,8 +210,8 @@
 .calGrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  padding: var(--space-3) var(--space-4) var(--space-2);
-  gap: 2px;
+  padding: var(--space-2) var(--space-3) var(--space-1);
+  gap: 1px;
 }
 
 .calDayLabel {
@@ -291,7 +291,7 @@
 
 /* EVENT PANEL */
 .calPanel {
-  padding: var(--space-4) var(--space-5) var(--space-5);
+  padding: var(--space-3) var(--space-4) var(--space-4);
   border-top: 1px solid var(--border-light);
   display: flex;
   flex-direction: column;
