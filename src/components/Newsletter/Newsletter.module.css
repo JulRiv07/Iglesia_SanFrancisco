@@ -1,6 +1,6 @@
 /* Newsletter - dark brick palette, consistent with Map and Footer */
 .newsletter {
-  background: var(--brick-dark);
+  background: #0D1B2A;
   position: relative;
   overflow: hidden;
 }
