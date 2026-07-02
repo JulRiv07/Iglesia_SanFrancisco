@@ -14,7 +14,7 @@
   inset: -20%;
   background-image: url('/images/hero.jpg');
   background-size: cover;
-  background-position: center 22%;
+  background-position: center 35%;
   will-change: transform;
   filter: brightness(0.85) contrast(1.05) saturate(0.85);
 }
