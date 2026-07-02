@@ -21,6 +21,10 @@
   display: block;
 }
 
+[data-theme="light"] .waveTop path {
+  fill: #0D1B2A;
+}
+
 .inner {
   display: grid;
   grid-template-columns: 2fr 1fr 1.5fr;
