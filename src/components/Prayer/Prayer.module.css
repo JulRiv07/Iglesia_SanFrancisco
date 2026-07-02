@@ -6,7 +6,7 @@
 }
 
 [data-theme="light"] .prayer {
-  background: #2C4A35;
+  background: #F2EDE4;
 }
 
 .bgLayer {
@@ -15,6 +15,12 @@
   background:
     radial-gradient(ellipse at 30% 50%, rgba(74,124,92,0.18) 0%, transparent 60%),
     radial-gradient(ellipse at 70% 50%, rgba(42,95,143,0.14) 0%, transparent 60%);
+}
+
+[data-theme="light"] .bgLayer {
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(44,74,53,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(184,149,42,0.07) 0%, transparent 60%);
 }
 
 .inner {
@@ -114,6 +120,34 @@
   font-size: clamp(var(--text-2xl), 3vw, var(--text-4xl));
   color: #fff;
   font-weight: 400;
+}
+
+[data-theme="light"] .verse {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .verse:first-child {
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .saintLabel,
+[data-theme="light"] .cross,
+[data-theme="light"] .attrText,
+[data-theme="light"] .footerCross {
+  color: var(--gold-dark);
+}
+
+[data-theme="light"] .openQuote,
+[data-theme="light"] .closeQuote {
+  color: var(--gold-dark);
+}
+
+[data-theme="light"] .line {
+  background: linear-gradient(90deg, transparent, rgba(139,106,16,0.45), transparent);
+}
+
+[data-theme="light"] .attrLine {
+  background: rgba(139,106,16,0.3);
 }
 
 /* Attribution */

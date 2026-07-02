@@ -1,6 +1,10 @@
 .footer {
-  background: var(--iron-mid);
+  background: #0D1B2A;
   position: relative;
+}
+
+[data-theme="light"] .footer {
+  background: #0D1B2A;
 }
 
 [data-theme="dark"] .footer {
