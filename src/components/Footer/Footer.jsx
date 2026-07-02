@@ -72,10 +72,7 @@ export default function Footer() {
             <p className={styles.contactItem}>
               📍 {f.addressDisplay}
             </p>
-            {/* <!-- LLENAR: Teléfono --> */}
-            <p className={styles.contactItem}>
-              📞 {f.phoneDisplay}
-            </p>
+
             <a href={`mailto:${f.email}`} className={`${styles.contactItem} ${styles.contactLink}`}>
               ✉️ {f.email}
             </a>

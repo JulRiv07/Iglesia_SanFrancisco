@@ -1,31 +1,20 @@
 .prayer {
   position: relative;
-  background: var(--bg-elevated);
   overflow: hidden;
   padding: var(--space-20) 0 var(--space-16);
+  background: #0B1A2B;
 }
 
-/* Fondo con imagen sutil de la capilla */
+[data-theme="light"] .prayer {
+  background: #2C4A35;
+}
+
 .bgLayer {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(
-      135deg,
-      rgba(11, 26, 43, 0.97) 0%,
-      rgba(26, 58, 37, 0.95) 50%,
-      rgba(11, 26, 43, 0.97) 100%
-    );
-}
-
-[data-theme="light"] .bgLayer {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(44, 74, 53, 0.97) 0%,
-      rgba(26, 44, 35, 0.96) 50%,
-      rgba(44, 74, 53, 0.97) 100%
-    );
+    radial-gradient(ellipse at 30% 50%, rgba(74,124,92,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(42,95,143,0.14) 0%, transparent 60%);
 }
 
 .inner {
